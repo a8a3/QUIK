@@ -86,8 +86,6 @@ function CreateCandlesDataSource()
         return false;
     end
     log_debug( "Get candles data" );
-    UpdateCandles();
-    UpdatePricesRange()
 end -- CreateCandlesDataSource
 
 
@@ -223,6 +221,8 @@ function OnInit( _path )
     log_info( "Log file name = " .. logFullFilePath );
 
     CreateCandlesDataSource();
+    UpdateCandles();
+    UpdatePricesRange()
 
     CreateView( "trend algo", gConfig );
     UpdateView( gParameters );
